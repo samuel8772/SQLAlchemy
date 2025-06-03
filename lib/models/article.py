@@ -28,9 +28,9 @@ class Article:
         return None
 
     def author(self):
-        from lib.models.author import Author
+        from lib.models.author import Author  # local import to avoid circular import
         return Author.find_by_id(self.author_id)
 
     def magazine(self):
-        from lib.models.magazine import Magazine
+        from lib.models.magazine import Magazine  # local import
         return Magazine.find_by_id(self.magazine_id)
